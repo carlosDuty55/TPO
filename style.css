@@ -1,0 +1,178 @@
+/* Color Theme Swatches in RGBA
+  {color: rgba(216, 78, 115, 1); 
+  color: rgba(85, 56, 114, 1); 
+  color: rgba(7, 11, 38, 1); 
+  color: rgba(14, 22, 63, 1); 
+  color: rgba(147, 242, 207, 1);  */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: rgba(7, 11, 38, 1);
+    color: white;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    /* border: white 2px solid; */
+    font-size: 1.5rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    /* background-color: rgba(85, 56, 114, 1); */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 4px;
+    padding: 5px;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #FFF;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: rgba(216, 78, 115, 1);
+}
+
+main{
+    padding: 4px;
+    padding: 0 15% 0 15%;
+    /* background-color: rgb(74, 74, 158); */
+    background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg); 
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+
+footer {
+    background-color: rgba(7, 11, 38, 1);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+    font-size: 1vw;
+}
+
+h3, ul {
+    margin: 10px;
+}
+
+form {
+    border-radius: 5px;
+    margin: 0 25% 0 25%;
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+
+/* select{
+    width: 50%;
+} */
+label, input {
+    /*font-size: 1.0vw;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+input[type=text]{
+    width: 150px;
+}
+input[type=submit] {
+    width: 25%;
+    background-color: white;
+    color: rgba(216, 78, 115, 1);
+    padding: 14px 20px;
+    margin: 20px 0;
+    border-width: 2px;
+    border-color: rgba(216, 78, 115, 1);
+    border-style: solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgba(216, 78, 115, 1);
+    color: white;
+}
+
+.contenedor {
+    display: grid;
+    gap: 10px;
+    /* background-color: rgb(164, 164, 255);  */
+    padding: 10px;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+        'izq	main	main	main'
+        'izq	main	main	main'
+        'izq	main	main	main'
+    ;
+}
+.item1 {
+    grid-area: izq;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.item1 li {
+    margin-top: 10%;
+    margin-left: 10%;
+    text-align:left;
+}
+
+.item1 h3 {
+    text-align: center;
+    background-color: rgba(216, 78, 115, 1);
+    color: azure;
+}
+
+.item2 {
+    grid-area: main;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.caption {
+    font-size: 10pt;
+    margin-bottom: 20px;
+    color: #030591;
+    padding: 0 8px;
+}
+
+@media (max-width: 768px){
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+    
+}
