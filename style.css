@@ -9,11 +9,19 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+}
+/* html {
+    height: 100%;
+} */
+body {
     font-family: 'AR One Sans', sans-serif;
+    /* min-height: 100%; */
 }
 
 header {
-    background-color: rgba(7, 11, 38, 1);
+    /* background-color: rgba(7, 11, 38, 1); */
+    background-color: rgba(14, 22, 63, 1);
     color: white;
     padding: 10px;
 }
@@ -60,11 +68,52 @@ nav {
 }
 
 main{
-    padding: 4px;
-    padding: 0 15% 0 15%;
+    /* grid-area: main; */
+    padding: 1% 15% 1% 15%;
     /* background-color: rgb(74, 74, 158); */
-    /* background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);  */
-    background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-3.jpg);
+    background-image: url(https://images.unsplash.com/photo-1608754482805-6f630357358b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80); 
+    /* background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-3.jpg); */
+}
+
+.contenedor {
+    display: grid;
+    gap: 10px;
+    /* background-color: rgb(164, 164, 255);  */
+    padding: 10px;
+    /* grid-template-columns: 1fr 3fr; */
+    /* grid-template-rows: 1fr 2fr 2fr 1fr; */
+    grid-template-areas:
+    'izq main main main'
+    'izq main main main'
+    'izq main main main'
+    'izq main main main'
+    ;
+}
+
+.item1 {
+    grid-area: izq;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.item1 li {
+    margin-top: 10%;
+    margin-left: 2%;
+    text-align:left;
+}
+
+.item1 h3 {
+    text-align: center;
+    background-color: rgba(216, 78, 115, 1);
+    color: azure;
+}
+
+.item2 {
+    grid-area: main;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
 }
 
 h1 {
@@ -74,12 +123,13 @@ h1 {
 
 
 footer {
+    /* grid-area: footer; */
     background-color: rgba(7, 11, 38, 1);
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 40px;
     margin: 0;
-    font-size: 1vw;
+    font-size: medium;
 }
 
 h3, ul {
@@ -87,8 +137,9 @@ h3, ul {
 }
 
 form {
+    /* grid-area: main; */
     border-radius: 5px;
-    margin: 0 20% 0 20%;
+    margin: 2% 20% 2% 20%;
     background-color: #f2f2f2;
     padding: 2%;
     font-size: small;
@@ -97,10 +148,9 @@ form {
 /* select{
     width: 50%;
 } */
-label, input {
+label, input{
     /*font-size: 1.0vw;*/
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
 }
 input[type=text]{
     width: 250px;
@@ -117,50 +167,12 @@ input[type=submit] {
     border-radius: 5px;
     cursor: pointer;
 }
-
+#boton{
+    text-align: center;
+}
 input[type=submit]:hover {
     background-color: rgba(216, 78, 115, 1);
     color: white;
-}
-
-.contenedor {
-    display: grid;
-    gap: 10px;
-    /* background-color: rgb(164, 164, 255);  */
-    padding: 10px;
-    grid-template-rows: 1fr 2fr 2fr 1fr;
-    grid-template-areas:
-        'izq	main	main	main'
-        'izq	main	main	main'
-        'izq	main	main	main'
-        'izq	main	main	main'
-        'footer	footer	footer	footer'
-    ;
-}
-.item1 {
-    grid-area: izq;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-}
-
-.item1 li {
-    margin-top: 10%;
-    margin-left: 0;
-    text-align:left;
-}
-
-.item1 h3 {
-    text-align: center;
-    background-color: rgba(216, 78, 115, 1);
-    color: azure;
-}
-
-.item2 {
-    grid-area: main;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f2f2f2;
 }
 
 .caption {
@@ -191,7 +203,7 @@ input[type=submit]:hover {
 }
 
 
-@media(max-width: 500px) {
+@media(max-width: 480px) {
     .menu {
         flex-direction: column;
         align-items: flex-start;
@@ -200,14 +212,39 @@ input[type=submit]:hover {
     .menu li {
         margin-bottom: 10px;
     }
-    form {
-        flex-direction: column;
-        align-items: flex-start;
+    /* form { */
+        /* flex-direction: column;
+        align-items: flex-start; */
+        
+        /* width: 100%; */
+        /* grid-template-areas: 
+        'main main main main'
+        
+        ;
+    } */
+
+    .contenedor{
+        
+        grid-template-areas: 
+        'main main main main'
+        'izq izq izq izq'
+        
+        ;
+        }
+    }
+    iframe{
+        width: 100%;
     }
 
-}
 
 @media (max-width: 768px){
+    .contenedor{
+        grid-template-areas: 
+        'main main main main'
+        'izq izq izq izq'
+
+        ;
+    }
     .menu {
         flex-direction: column;
         align-items: flex-start;
