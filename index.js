@@ -1,3 +1,5 @@
+window.addEventListener('load', datosNasa());
+
 let cad = `        
 <h1>ASTRONOMÍA</h1>
   
@@ -47,4 +49,29 @@ if (document.getElementById("idtabla")) {
     `
     console.log(cad)
     document.getElementById("idtabla").innerHTML=cad
+  }
+
+ 
+
+  function datosNasa(){
+
+    const nasa_key = 'ufaD0MaCwzmUrfGq8XhUaNWUMpNhzQPVag1mXbLW';
+    const ruta = `https://api.nasa.gov/planetary/apod?api_key=${nasa_key}`;
+
+    fetch(ruta)
+    .then(respuesta => respuesta.json())
+    .then(data => mostrarDatos(data))
+
+  }
+
+  function mostrarDatos({date, title, url}){
+
+    const titulo = document.querySelector('#titulo_nasa');
+    titulo.innerHTML = `Título: ${title}`;
+    const fecha = document.querySelector('#fecha_nasa');
+    fecha.innerHTML = `Fecha: ${date}`;
+    const foto = document.querySelector('#foto_nasa');
+    foto.innerHTML = `<img src="${url}" class="nasa_img">`;
+
+
   }
