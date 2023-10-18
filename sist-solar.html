@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Solar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/47d3411c6d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://files.softicons.com/download/object-icons/solar-system-icons-by-parthiban-mohanraj/ico/The%20Red%20Planet.ico" type="image/x-icon">
@@ -14,33 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Astronomía</h1>
-        <nav>
-            <div class="logo">
-                <img src="data:image/png;base64,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">
-            </div>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="tierra.html">La Tierra</a></li>
-                <li><a href="elsol.html">El Sol</a></li>
-                <li><a href="sist-solar.html">Sistema Solar</a></li>
-                <li><a href="universo.html">Universo</a></li>
-                <li><a href="form.html">Suscribirse</a></li>
-            </ul>
-        </nav>
+    <header id="idHeader">
+
     </header>
     <main>
         <div class="contenedor">
             <div class="item1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas atque recusandae dolore, optio eligendi, magnam ipsam ea culpa laboriosam saepe ut, quis repellat molestiae maxime porro quasi voluptatibus aspernatur! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, ab dolorem veniam animi ex dicta sed quo corrupti ullam tenetur facilis doloremque odit, recusandae quod repellat minus amet, perferendis quas.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas atque recusandae dolore, optio eligendi, magnam ipsam ea culpa laboriosam saepe ut, quis repellat molestiae maxime porro quasi voluptatibus aspernatur! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             </div>
             <div class="item2">
                 <h2>El sistema solar</h2>
                 <p>El sistema solar es un sistema planetario. Un sistema planetario está constituido por una estrella (o en ocasiones un conjunto de estrellas) y los cuerpos celestes que giran a su alrededor, es decir, que se encuentran bajo la influencia de su campo gravitatorio, ya se trate de planetas con sus respectivas lunas, planetas menores, asteroides, cometas, o polvo estelar.</p>
-                <p>En el caso del sistema solar, la estrella que da forma a todo el sistema planetario es el Sol, el cual ocupa el centro de un enorme disco de material que se extiende por más de 30.000 millones de kilómetros, en el que como decíamos, se encuentran sus ocho planetas y demás objetos celestes.</p>
-                <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Indicators/dots -->
+                <p>En el caso del sistema solar, la estrella que da forma a todo el sistema planetario es <a href="elsol.html">el Sol</a>, el cual ocupa el centro de un enorme disco de material que se extiende por más de 30.000 millones de kilómetros, en el que como decíamos, se encuentran sus ocho planetas y demás objetos celestes.</p>
+                <!-- <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                    
                     <div class="carousel-indicators">
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
@@ -50,10 +37,10 @@
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
-                    </div>
+                    </div> -->
         
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
+                
+                <!-- <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://www.nationalgeographic.com.es/medio/2022/07/31/el-planeta-mercurio_c7bafef8_1280x720.jpg" alt="mercurio" class="d-block" width="100%">
                         <div class="carousel-caption">
@@ -112,13 +99,17 @@
                     </div>
                 </div>
         
-                    <!-- Left and right controls/icons -->
+                    
                     <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
                     </button>
+                </div> -->
+                
+                <div id="idtabla">
+                
                 </div>
                 <h3>¿Cuáles son las partes del sistema solar?</h3>
 
@@ -132,13 +123,16 @@
                 <p>El cinturón de asteroides es una región del sistema solar situada entre las órbitas de Marte y Júpiter que albera una gran cantidad de pequeños objetos formados por roca y hielo, en su mayoría asteroides, los cuales se cree que son los restos de un planeta que nunca llegó a formarse debido a la influencia gravitatoria de Júpiter. Más de la mitad la masa total del cinturón está contenida en 5 objetos: Ceres, el planeta enano; y los asteroides Palas, Vesta Higia y Juno.</p>
                 <p>El cinturón de Kuiper es una región del sistema solar situada más allá de la órbita de Neptuno. Es similar al cinturón de asteroides, pero es mucho más grande: 20 veces más ancho y hasta 200 veces más masivo, y al igual que este, se compone principalmente de pequeños objetos residuales de la formación del sistema solar, en este caso compuestos principalmente por agua, metano y amoniaco en forma de hielo.</p>
                 <p>La nube de Oort es una nube esférica de objetos que se encuentran más allá de la órbita de Neptuno, hasta a un año luz de distancia del Sol. Según las estimaciones, esta nube podría albergar entre 1.000 y 100.000 millones de objetos formados por hielo, metano y amoníaco que podrían sumar una masa de 5 veces la del planeta Tierra.</p>
+                <br>
                 <img src="https://cdn.britannica.com/92/95392-050-B5756EB6/orbits-planets-bodies-solar-system.jpg" alt="" width="100%">
             </div>
         </div>
     </main>
-    <footer>
-        <p> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-youtube"></i> </p>
-        <p>Derechos reservados @2023</p> 
+    <footer id="idFooter">
+
     </footer>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+    
 </body>
 </html>
