@@ -160,7 +160,8 @@ label, input{
 input[type=text]{
     width: 250px;
 }
-input[type=submit] {
+input[type=button] {
+    font-size: large;
     width: 30%;
     background-color: white;
     color: rgba(216, 78, 115, 1);
@@ -210,6 +211,7 @@ input[type=submit]:hover {
 .nasa_img{
     max-width: 100%;
 }
+
 
 iframe{
     text-align: center;

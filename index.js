@@ -64,14 +64,62 @@ if (document.getElementById("idtabla")) {
 
   }
 
-  function mostrarDatos({date, title, url}){
+  function mostrarDatos({date, media_type, title, url}){
 
     const titulo = document.querySelector('#titulo_nasa');
     titulo.innerHTML = `Título: ${title}`;
     const fecha = document.querySelector('#fecha_nasa');
     fecha.innerHTML = `Fecha: ${date}`;
-    const foto = document.querySelector('#foto_nasa');
-    foto.innerHTML = `<img src="${url}" class="nasa_img">`;
-
+    const multimedia = document.querySelector('#multimedia');
+    if (media_type == 'video'){
+      multimedia.innerHTML = `<iframe width="720" height="480" src="${url}" frameborder="0" allowfullscreen></iframe> `
+    } else {
+      multimedia.innerHTML = `<img src="${url}" class="nasa_img">`
+    }
 
   }
+
+  function validarFormulario(){
+
+    if (document.formulario.nombre.value.length <= 2){
+      alert("Ingrese un nombre válido")
+      document.formulario.nombre.focus()
+      return
+    }
+
+    if (document.formulario.apellido.value.length <= 2){
+      alert("Ingrese un apellido válido")
+      document.formulario.apellido.focus()
+      return
+    }
+
+    let dniEntero = parseInt(document.formulario.dni.value)
+    if (isNaN(dniEntero)){
+      alert("Ingrese un número de documento válido")
+      document.formulario.dni.focus()
+      return
+    } else {
+      if (document.formulario.dni.value.length < 6 || document.formulario.dni.value.length > 12){
+        alert("El número de documento ingresado debe tener entre 6 y 12 caracteres")
+        document.formulario.dni.focus()
+        return
+      }
+    }
+
+    var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+    if(!(validEmail.test(document.formulario.email.value))){
+      alert("Ingrese un email válido")
+        return;
+     }
+
+     alert("Gracias por tu suscripción!")
+     document.formulario.submit()
+     }
+
+
+
+
+    
+
+
+

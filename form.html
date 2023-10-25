@@ -18,15 +18,12 @@
 
     </header>
     <main>
-    <form>
+    <form name="formulario">
         <h2>Suscripción</h2><br>
-        <div>
-            <label for="email">Email: </label>
-            <input type="text" id="email" name="email" placeholder="Ingrese su dirección de email">
-        </div>
+   
     <span>
         <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre">
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
     </span>
     <br>
     <span>
@@ -35,15 +32,15 @@
     </span>
     
     <div>
-        <label for="direccion">Dirección: </label>
-        <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección">
+        <label for="dni">Número de documento: </label>
+        <input type="text" id="dni" name="dni" placeholder="Ingrese su documento">
     </div>
     <div>
-        <label for="depto">Piso, Depto, etc: </label>
-        <input type="text" id="depto" name="depto" placeholder="Ingrese su piso, depto, etc.">
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="Ingrese su dirección de email">
     </div>
 
-    <span>
+    <!--<span>
         <label for="ciudad">Ciudad: </label>
         <input type="text" id="ciudad" name="ciudad" placeholder="Ingrese ciudad">
     </span>
@@ -92,11 +89,12 @@
             <input type="radio" name="gender" value="no_binario"> No binario
             <input type="radio" name="gender" value="no_declarado"> Prefiero no decirlo
         </p>
-    </div>
+    </div> -->
+
     <p>Comentarios:</p>
     <textarea name="comentario"></textarea>
     <br>
-    <div id="boton"><input type="submit" value="Suscribirse"></div>
+    <div id="boton" ><input type="button" value="Suscribirse" onclick="validarFormulario()"></div>
     </form>
     </main>
     <footer id="idFooter">
