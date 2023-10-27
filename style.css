@@ -1,27 +1,20 @@
-/* Color Theme Swatches in RGBA
-  {color: rgba(216, 78, 115, 1); 
-  color: rgba(85, 56, 114, 1); 
-  color: rgba(7, 11, 38, 1); 
-  color: rgba(14, 22, 63, 1); 
-  color: rgba(147, 242, 207, 1);  */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     
 }
-/* html {
-    height: 100%;
-} */
+
 body {
     font-family: 'AR One Sans', sans-serif;
-    /* min-height: 100%; */
+    position: relative;
+    padding-bottom: 120px;
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1608754482805-6f630357358b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80); 
 }
 
 header {
     background-color: rgba(7, 11, 38, 1);
-    /* background-color: rgba(14, 22, 63, 1); */
     color: white;
     padding: 10px;
 }
@@ -33,7 +26,6 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.2rem;
-    /* border: white 2px solid; */
     font-size: 1.5rem;
 }
 
@@ -45,7 +37,6 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    /* background-color: rgba(85, 56, 114, 1); */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -68,20 +59,15 @@ nav {
 }
 
 main{
-    /* grid-area: main; */
     padding: 1% 15% 1% 15%;
-    /* background-color: rgb(74, 74, 158); */
-    background-image: url(https://images.unsplash.com/photo-1608754482805-6f630357358b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80); 
-    /* background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-3.jpg); */
+
 }
 
 .contenedor {
     display: grid;
     gap: 10px;
-    /* background-color: rgb(164, 164, 255);  */
     padding: 10px;
     grid-template-columns: 3fr 3fr 3fr 3fr;
-    /* grid-template-rows: 1fr 2fr 2fr 1fr; */
     grid-template-areas:
     'izq main main main'
     'izq main main main'
@@ -126,7 +112,9 @@ h2{
 }
 
 footer {
-    /* grid-area: footer; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: rgba(7, 11, 38, 1);
     color: rgb(255, 255, 255);
     text-align: center;
@@ -142,20 +130,16 @@ table,td,th{
     border: 1px solid black;
 }
 form {
-    /* grid-area: main; */
     border-radius: 5px;
-    margin: 2% 20% 2% 20%;
+    margin: 3% 15%;
     background-color: #f2f2f2;
-    padding: 2%;
+    padding: 3%;
     font-size: small;
 }
 
-/* select{
-    width: 50%;
-} */
+
 label, input{
-    /*font-size: 1.0vw;*/
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
 }
 input[type=text]{
     width: 250px;
@@ -176,7 +160,7 @@ input[type=button] {
 #boton{
     text-align: center;
 }
-input[type=submit]:hover {
+input[type=button]:hover {
     background-color: rgba(216, 78, 115, 1);
     color: white;
 }
@@ -231,15 +215,9 @@ iframe{
     form { 
         margin: 0;
         padding: 0;
-        /* flex-direction: column;
-        align-items: flex-start; */
-        
-        /* width: 100%; */
     } 
 
     .contenedor{
-            /* display: grid; */
-            
             margin: 0;
             padding: 0;
             grid-template-areas: 
@@ -247,18 +225,17 @@ iframe{
             'izq'
             ;
             grid-template-columns: 100%;
-            /* grid-template-rows: 1fr 2fr 2fr 1fr; */
+            
         }
     }
     iframe{
         width: 100%;
     }
-
+    
 
 @media (max-width: 768px){
     .contenedor{
-        /* display: grid; */
-        
+
         margin: 0;
         padding: 0;
         grid-template-areas: 
@@ -266,13 +243,12 @@ iframe{
         'izq'
         ;
         grid-template-columns: 100%;
-        grid-template-rows: 100%;
+        
     }
     .menu {
         flex-direction: column;
-        /* align-items: flex-start; */
         flex-wrap: wrap; justify-content: space-between; align-items: flex-end;
-        /* width: 100%; */
+
     }
 
     .menu li {
@@ -291,8 +267,27 @@ iframe{
 @media (max-width: 900px){
     .menu {
         display: block; width: auto;
-        /* flex-direction: column;
-        align-items: flex-start; */
     }
-
+    form {
+        margin: 0;
+        padding: 0;
+    }
 }
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%; 
+    padding-top: 30px; 
+    height: 0;
+    overflow: hidden;
+    }
+    
+    .video iframe,
+    .video object,
+    .video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }

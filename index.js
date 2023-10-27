@@ -118,8 +118,3 @@ if (document.getElementById("idtabla")) {
 
 
 
-
-    
-
-
-
