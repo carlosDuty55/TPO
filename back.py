@@ -46,8 +46,7 @@ class Catalogo:
             codigo INT,
             nombre VARCHAR(255) NOT NULL,
             apellido VARCHAR(255) NOT NULL,
-            dni INT NOT NULL,
-            mail VARCHAR(255) NOT NULL)''')
+            dni INT NOT NULL)''')
         self.conn.commit()
 
 
@@ -80,12 +79,11 @@ class Catalogo:
             print(f"Nombre.....: {persona['nombre']}")
             print(f"Apellido...: {persona['apellido']}")
             print(f"DNI........: {persona['dni']}")
-            print(f"Mail.......: {persona['mail']}")
             print("-" * 40)
         else:
             print("Persona no encontrada.")
     #----------------------------------------------------------------
-    def agregar_persona(self, codigo, nombre, apellido, dni, mail):
+    def agregar_persona(self, codigo, nombre, apellido, dni):
 
 
         self.cursor.execute(f"SELECT * FROM personas WHERE codigo = {codigo}")
@@ -93,8 +91,8 @@ class Catalogo:
         if persona_existe:
             return False
         
-        sql = "INSERT INTO personas (codigo, nombre, apellido, dni, mail) VALUES (%s, %s, %s, %s, %s)"
-        valores = (codigo, nombre, apellido, dni, mail)
+        sql = "INSERT INTO personas (codigo, nombre, apellido, dni) VALUES (%s, %s, %s, %s)"
+        valores = (codigo, nombre, apellido, dni)
         self.cursor.execute(sql,valores)
         self.conn.commit()
         return True
@@ -107,9 +105,9 @@ class Catalogo:
         return self.cursor.rowcount > 0
 
     #----------------------------------------------------------------
-    def modificar_persona(self, codigo, nuevo_nombre, nuevo_apellido, nuevo_dni, nuevo_mail):
-        sql = "UPDATE personas SET nombre = %s, apellido = %s, dni = %s, mail = %s WHERE codigo = %s"
-        valores = (nuevo_nombre, nuevo_apellido, nuevo_dni, nuevo_mail, codigo)
+    def modificar_persona(self, codigo, nuevo_nombre, nuevo_apellido, nuevo_dni):
+        sql = "UPDATE personas SET nombre = %s, apellido = %s, dni = %s WHERE codigo = %s"
+        valores = (nuevo_nombre, nuevo_apellido, nuevo_dni, codigo)
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.rowcount > 0
@@ -127,7 +125,7 @@ ruta_destino = 'static/img/'
 
 
 #--------------------------------------------------------------------
-@app.route("/form", methods=["GET"])
+@app.route("/suscriptores", methods=["GET"])
 def listar_persona():
     personas = catalogo.listar_persona()
     return jsonify(personas)
@@ -151,7 +149,6 @@ def agregar_persona():
     nombre = request.form['nombre']
     apellido = request.form['apellido']
     dni = request.form['dni']
-    mail = request.form['mail']  
    
 
 
@@ -160,7 +157,7 @@ def agregar_persona():
    # imagen.save(os.path.join(ruta_destino, nombre_imagen))
 
 
-    if catalogo.agregar_persona(codigo, nombre, apellido, dni, mail):
+    if catalogo.agregar_persona(codigo, nombre, apellido, dni):
         return jsonify({"mensaje": "Persona agregada"}), 201
     else:
         return jsonify({"mensaje": "Persona ya existente"}), 400
@@ -192,7 +189,6 @@ def modificar_persona(codigo):
     nuevo_nombre = request.form.get("nombre")
     nuevo_apellido = request.form.get("apellido")
     nuevo_dni = request.form.get("dni")
-    nuevo_mail = request.form.get("mail")
 
 
     # Procesamiento de la imagen
@@ -203,7 +199,7 @@ def modificar_persona(codigo):
    # imagen.save(os.path.join(ruta_destino, nombre_imagen))
     
     # Actualización del producto
-    if catalogo.modificar_persona(codigo, nuevo_nombre, nuevo_apellido, nuevo_dni, nuevo_mail):
+    if catalogo.modificar_persona(codigo, nuevo_nombre, nuevo_apellido, nuevo_dni):
         return jsonify({"mensaje": "Persona modificada"}), 200
     else:
         return jsonify({"mensaje": "Persona no encontrada"}), 404

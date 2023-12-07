@@ -16,8 +16,14 @@
 
     </header>
     <main>
-    <form name="formulario">
+    <form id="formulario" enctype="multipart/form-data">
         <h2>Suscripción</h2><br>
+
+    <span>
+        <label for="codigo">Codigo: </label>
+        <input type="text" id="codigo" name="codigo" placeholder="Ingrese un código del 1 al 100">
+    </span>
+    <br>    
    
     <span>
         <label for="nombre">Nombre: </label>
@@ -33,20 +39,27 @@
         <label for="dni">Número de documento: </label>
         <input type="text" id="dni" name="dni" placeholder="Ingrese su documento">
     </div>
-    <div>
-        <label for="email">Email: </label>
-        <input type="text" id="email" name="email" placeholder="Ingrese su dirección de email">
-    </div>
+
     
     <p>Comentarios:</p>
     <textarea name="comentario"></textarea>
     <br>
-    <div id="boton" ><input type="button" value="Suscribirse" onclick="validarFormulario()"></div>
+    <button class="boton" type="submit">Suscribirse</button>
+    <br>
+    <a href="suscriptores.html"> Ver lista de suscriptores</a>
     </form>
-    </main>
-    <footer id="idFooter">
 
-    </footer>
-    <script src="index.js"></script>
+    
+  
+    
+    <!-- <script src="index.js"></script> -->
+    <script src="altas.js"></script>
+
+</main>
+    
+
 </body>
+<footer id="idFooter">
+
+</footer>
 </html>
