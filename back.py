@@ -117,11 +117,11 @@ class Catalogo:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='localhost', user='root', password='', database='miapp')
+catalogo = Catalogo(host='CarlosDuty55.mysql.pythonanywhere-services.com', user='CarlosDuty55', password='jgnh4928', database='CarlosDuty55$miapp')
 
 
 # Carpeta para guardar las imagenes
-ruta_destino = 'static/img/'
+ruta_destino = '/home/CarlosDuty55/mysite/static/img'
 
 
 #--------------------------------------------------------------------

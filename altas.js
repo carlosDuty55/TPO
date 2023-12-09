@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:5000/"
+const URL = "https://carlosduty55.pythonanywhere.com/"
 
 
 // Capturamos el evento de envío del formulario
